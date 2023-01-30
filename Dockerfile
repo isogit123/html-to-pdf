@@ -5,7 +5,7 @@ RUN apt update && apt install dumb-init gconf-service libasound2 libatk1.0-0 lib
     libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 \
     libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 \
     libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 \
-    libnss3 lsb-release xdg-utils wget ttf-mscorefonts-installer -y && fc-cache -f && apt clean
+    libnss3 lsb-release xdg-utils wget libgbm1 ttf-mscorefonts-installer -y && fc-cache -f && apt clean
 USER node
 WORKDIR /home/node
 COPY package.json package-lock.json ./

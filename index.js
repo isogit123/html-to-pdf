@@ -10,6 +10,9 @@ app.use(bodyParser.json());
   const cluster = await Cluster.launch({
     concurrency: Cluster.CONCURRENCY_CONTEXT,
     maxConcurrency: process.env.maxConcurrency || 2,
+    puppeteerOptions: {
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    },
   });
   await cluster.task(async ({ page, data }) => {
     if (data.html) {
