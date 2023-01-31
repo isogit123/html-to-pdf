@@ -4,7 +4,7 @@ const app = express();
 const { Cluster } = require("puppeteer-cluster");
 const gracefulShutdown = require("http-graceful-shutdown");
 
-app.use(bodyParser.json());
+app.use(bodyParser.json({limit: '20mb'}));
 
 (async () => {
   const cluster = await Cluster.launch({
